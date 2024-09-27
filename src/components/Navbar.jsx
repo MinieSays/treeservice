@@ -22,7 +22,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center">
             <img loading="lazy" src={logo} className="h-10 w-10" alt="Logo" />{" "}
             <h1 className="ml-3 text-xl font-bold text-gray-900">
-              FC Tree Service
+              Fort Collins Tree Service
             </h1>
           </Link>
         </div>

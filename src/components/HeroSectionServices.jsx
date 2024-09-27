@@ -12,7 +12,7 @@ const HeroSectionServices = ({
   secondaryLinkText,
   secondaryLinkUrl,
   primaryLinkIcon: PrimaryIcon = TreesIcon,
-  emailModalProps, // Contains title, buttonLabel, serviceId, templateId, and userId for EmailModal
+  emailModalProps, 
 }) => {
   return (
     <section
@@ -24,9 +24,9 @@ const HeroSectionServices = ({
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-70 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-black opacity-70 pointer-events-none "></div>
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-center">
+      <div className="container max-w-[1200px] relative z-10 mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-center">
         <div className="space-y-6 lg:pr-8 text-center lg:text-left">
           <h1 className="text-white bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl">
             {title}

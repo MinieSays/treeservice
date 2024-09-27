@@ -22,7 +22,7 @@ const TreeRemoval = () => {
         backgroundImage={treeImage}
         title="Tree Removal Fort Collins"
         subtitle="Emergency tree removal services in Fort Collins and surrounding areas."
-        primaryLinkText="Call us at 970-200-8043"
+        primaryLinkText="970-200-8043"
         primaryLinkUrl="/contact"
         secondaryLinkText="Learn More"
         secondaryLinkUrl="/services"

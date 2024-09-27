@@ -32,7 +32,7 @@ const TreeTrimming = () => {
             are trained in tree removal.
           </>
         }
-        primaryLinkText="Call us at 970-200-8043"
+        primaryLinkText="970-200-8043"
         primaryLinkUrl="/contact"
         secondaryLinkText="Learn More"
         secondaryLinkUrl="/services"

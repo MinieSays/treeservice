@@ -11,13 +11,21 @@ import treeimg from "../assets/tree-removal-fort-collins.jpg";
 import img1 from "../assets/tree-removal-fortcollins-co.jpg";
 import treeimg1 from "../assets/tree-trimming-2.jpg";
 import Accordion from "../components/Accordion";
+import { Helmet } from "react-helmet";
 
 const TreeRemoval = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Fort Collins Tree Service - Tree Removal & Stump Removal Fort Collins</title>
+        <meta
+          name="Fort Collins Tree Service - Tree Trimming, Tree Removal"
+          content="Get affordable tree removal in Fort Collins. Contact us today - Fort Collins Tree Service"
+        />
+      </Helmet>
       <HeroSection
         backgroundImage={treeImage}
         title="Tree Removal Fort Collins"
@@ -163,11 +171,8 @@ const TreeRemoval = () => {
           </>
         }
       />
-      <Accordion
-      faqs={faqs}
-      sectionTitle="Tree Trimming FAQ"
-    />
-    </div>
+      <Accordion faqs={faqs} sectionTitle="Tree Trimming FAQ" />
+    </>
   );
 };
 

@@ -9,13 +9,21 @@ import treeImg from "../assets/code.jpg";
 import Section from "../components/Section";
 import treeimg1 from "../assets/tree-trimming.jpg";
 import img1 from "../assets/tree-1.jpg";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Fort Collins Tree Service Tree Trimming, Tree Removal</title>
+        <meta
+          name="Fort Collins Tree Service - Tree Trimming, Tree Removal"
+          content="Fort Collins Tree Service - Our expert arborists provide tree trimming, tree removal, stump removal for your residential or commercial land."
+        />
+      </Helmet>
       <HeroSection
         title="Emergency"
         highlightedText="Tree Services"
@@ -127,7 +135,7 @@ const Home = () => {
           </>
         }
       />
-    </div>
+    </>
   );
 };
 

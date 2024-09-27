@@ -11,13 +11,21 @@ import img1 from "../assets/tree-trimming-2.jpg";
 import img2 from "../assets/Tree-Service-Financing.webp";
 import treeimg1 from "../assets/tree-service-near-me-in-fort collins.jpg";
 import LongText from "../components/LongText";
+import { Helmet } from "react-helmet";
 
 const TreeTrimming = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Fort Collins Tree Service - Tree Trimming</title>
+        <meta
+          name="Fort Collins Tree Service - Tree Trimming"
+          content="Fort Collins Tree Service is your number one service provider for tree care. Our expert arborists provide tree trimming in Fort Collins Co, as-well as tree removal."
+        />
+      </Helmet>
       <HeroSectionServices
         backgroundImage={img2}
         title="Tree Trimming Fort Collins"
@@ -219,11 +227,8 @@ const TreeTrimming = () => {
           </>
         }
       />
-      <Accordion
-      faqs={faqs}
-      sectionTitle="Tree Trimming FAQ"
-    />
-    </div>
+      <Accordion faqs={faqs} sectionTitle="Tree Trimming FAQ" />
+    </>
   );
 };
 

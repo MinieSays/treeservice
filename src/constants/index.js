@@ -5,17 +5,10 @@ import {
   Sprout,
   Flower2,
   Trees,
+  TreePalm,
+  LeafIcon,
+  Cloud,
 } from "lucide-react";
-
-
-
-export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
-];
-
 
 export const features = [
   {
@@ -58,23 +51,25 @@ export const features = [
 
 export const checklistItems = [
   {
-    title: "Code merge made easy",
+    title: "Safe Tree Removal",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "We specialize in the safe removal of trees that are dead, dying, or pose a danger to your property.",
   },
   {
-    title: "Review code without worry",
+    title: "Tree Trimming & Pruning",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Maintain the health and appearance of your trees with professional trimming and pruning services, promoting healthy growth and preventing hazards.",
   },
   {
-    title: "AI Assistance to reduce time",
+    title: "Emergency Tree Services",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Our team is available 24/7 for emergency tree removal and storm damage cleanup, ensuring your property remains safe.",
   },
   {
-    title: "Share work in minutes",
+    title: "Stump Grinding & Removal",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Remove unsightly tree stumps from your yard with our efficient stump grinding services, restoring the beauty of your landscape.",
   },
 ];
+
+

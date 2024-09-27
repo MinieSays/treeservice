@@ -32,6 +32,7 @@ const SectionRight = () => {
 
           <div className="w-full">
             <img
+              loading="lazy"
               src={img1}
               alt="Community Collaboration"
               className="w-full h-64 lg:h-auto object-cover rounded-xl shadow-lg"

@@ -1,6 +1,5 @@
 import React from "react";
 import treeimg from "../assets/tree-trimming.jpg";
-import { Link } from "react-router-dom";
 import Button from "./ui/Button";
 
 const SectionLeft = () => {
@@ -8,16 +7,15 @@ const SectionLeft = () => {
     <section className="max-w-7xl mx-auto py-20 px-6 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image Section - Now First */}
           <div className="w-full">
             <img
+              loading="lazy"
               src={treeimg}
               alt="Community Collaboration"
               className="w-full h-64 lg:h-auto object-cover rounded-xl shadow-lg"
             />
           </div>
 
-          {/* Text Content Section - Now Second */}
           <div className="flex flex-col justify-center items-center lg:items-start space-y-8">
             <div className="text-center lg:text-left space-y-4">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug">
@@ -37,7 +35,6 @@ const SectionLeft = () => {
               </p>
             </div>
 
-            {/* CTA Button */}
             <div className="w-full sm:w-auto">
               <Button
                 label="Get Quoted"

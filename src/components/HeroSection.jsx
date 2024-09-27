@@ -1,46 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import emailjs from "emailjs-com";
+import { toast } from "react-hot-toast";
 
-const HeroSection = () => {
+const HeroSection = ({
+  title,
+  highlightedText,
+  description,
+  buttonText,
+  buttonLink,
+  backgroundImage,
+  formTitle,
+  emailServiceId,
+  emailTemplateId,
+  emailUserId,
+}) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    time: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        emailServiceId,
+        emailTemplateId,
+        formData,
+        emailUserId
+      )
+      .then(
+        (result) => {
+          toast.success("We received your message and will get back to you in 24 hours.", {
+            duration: 5000,
+          });
+        },
+        (error) => {
+          toast.error("Failed to send the message, please try again.");
+        }
+      );
+
+    setFormData({
+      name: "",
+      phone: "",
+      time: "",
+      message: "",
+    });
+  };
+
   return (
     <section
       className="relative bg-cover bg-center bg-fixed pt-24 md:pt-32 py-16 md:py-12"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/589802/pexels-photo-589802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
-        backgroundAttachment: "fixed", // Parallax effect
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay to Darken the Image */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
-      {/* Content Section */}
       <div className="container relative z-10 mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0">
-        {/* Left Text Section */}
         <div className="w-full md:w-5/12 text-white">
           <h1 className="text-4xl md:text-5xl text-white font-bold">
-            Emergency <span className="text-lime-500">Tree</span> Services in Fort Collins
+            {title} <span className="text-lime-500">{highlightedText}</span>
           </h1>
           <div className="w-16 h-2 bg-lime-500 my-6 mx-auto"></div>
           <p className="text-lg md:text-xl leading-relaxed mb-8">
-            When disaster strikes or immediate tree services are needed, count on us to be there for you. We provide emergency tree services to ensure your property is safe and your trees are cared for.
+            {description}
           </p>
-          <Link to="/contact">
-          <button className="bg-lime-500 hover:bg-lime-600 text-white font-semibold text-lg px-6 py-3 rounded-md shadow-lg">
-            Contact Us Now
-          </button>
+          <Link to={buttonLink}>
+            <button className="bg-lime-500 hover:bg-lime-600 text-white font-semibold text-lg px-6 py-3 rounded-md shadow-lg">
+              {buttonText}
+            </button>
           </Link>
         </div>
 
-        {/* Right Form Section */}
         <div className="w-full md:w-5/12 relative z-10">
           <div className="bg-white bg-opacity-90 py-8 px-6 rounded-lg shadow-xl w-full max-w-md">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Free Consultation
+              {formTitle}
             </h2>
-            <form className="space-y-4">
-              {/* Name Input */}
+            <form className="space-y-4" onSubmit={sendEmail}>
               <div>
                 <label className="block font-medium mb-2 text-left" htmlFor="name">
                   Name
@@ -48,12 +100,15 @@ const HeroSection = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-600"
                   placeholder="Your Name"
+                  required
                 />
               </div>
 
-              {/* Phone Number Input */}
               <div>
                 <label className="block font-medium mb-2 text-left" htmlFor="phone">
                   Phone Number
@@ -61,12 +116,15 @@ const HeroSection = () => {
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-600"
                   placeholder="Your Phone Number"
+                  required
                 />
               </div>
 
-              {/* Best Time to Call Input */}
               <div>
                 <label className="block font-medium mb-2 text-left" htmlFor="time">
                   Best Time to Call
@@ -74,25 +132,29 @@ const HeroSection = () => {
                 <input
                   type="text"
                   id="time"
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
                   className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-600"
                   placeholder="Morning, Afternoon, Evening"
                 />
               </div>
 
-              {/* Message Input */}
               <div>
                 <label className="block font-medium mb-2 text-left" htmlFor="message">
                   Message
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="3"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-600"
                   placeholder="Your Message"
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
               <div className="text-left">
                 <button
                   type="submit"

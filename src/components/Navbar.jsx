@@ -27,7 +27,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <nav className="hidden md:flex space-x-8 text-lg font-medium">
+        <nav className="hidden md:flex items-center space-x-8 md:text-sm  lg:text-lg font-medium">
           <Link to="/" className="hover:text-lime-600 transition-all py-2">
             Home
           </Link>
@@ -47,8 +47,9 @@ const Navbar = () => {
           >
             Tree Removal
           </Link>
-
-          <Button label="Get a Quote" backgroundColor="#a4cc2c" />
+          <Link to="/contact" className="hidden custombp:block">
+            <Button label="Get a Quote" backgroundColor="#a4cc2c" />
+          </Link>
         </nav>
 
         <div className="md:hidden">

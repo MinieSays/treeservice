@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         custom: ['"Poppins"', 'sans-serif'],  
       },
+      screens: {
+        'custombp': '1050px', 
+      },
     },
   },
   plugins: [],

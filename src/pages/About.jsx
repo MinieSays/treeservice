@@ -5,7 +5,8 @@ import CallToActionBanner from "../components/CallToActionBanner";
 import heroImage from "../assets/treeserviceteam.jpg";
 import heroBackground from "../assets/trees.jpeg";
 import HeroSectionAbout from "../components/About/HeroSectionAbout";
-import founderImage from "../assets/treeserviceteam.jpg";
+import img1 from "../assets/tree-removal-fort-collins.jpg"
+import img from "../assets/Tree-Trimming-Fot-Collins-Co-791x1024.png"
 
 const About = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const About = () => {
       />
       <Features />
       <Section
-        imageSrc={founderImage}
+        imageSrc={img}
         imageAlt="Founder of FC Tree Service"
         title="Quality First"
         subtitle="Our Journey"
@@ -31,7 +32,7 @@ const About = () => {
         reverseColumns={false}
       />
       <Section
-        imageSrc={founderImage}
+        imageSrc={img1}
         imageAlt="Founder of FC Tree Service"
         title="Roots Run Deep"
         subtitle="The Story Behind Fort Collins Tree Service"

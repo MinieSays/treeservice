@@ -21,7 +21,7 @@ export const FeaturesData = [
   },
 ];
 
-export const faqs = [
+export const questions = [
   {
     question: "When is the best time to trim trees?",
     answer:

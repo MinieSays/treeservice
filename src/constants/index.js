@@ -5,9 +5,6 @@ import {
   Sprout,
   Flower2,
   Trees,
-  TreePalm,
-  LeafIcon,
-  Cloud,
 } from "lucide-react";
 
 export const features = [

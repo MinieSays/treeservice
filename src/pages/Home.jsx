@@ -89,7 +89,7 @@ const Home = () => {
             and comprehensive tree care services to property owners in Fort
             Collins, CO, and surrounding areas. We understand that each tree
             care solution is not one size fits all. Each job requires knowledge
-            and expertise to create a custom-tailored solution.
+            and expertise to <a href="https://medium.com/@maxinewrites/side-hustles-that-dont-feel-like-work-fun-ways-to-make-extra-cash-427ddab5e545">create</a> a custom-tailored solution.
             <br />
             <br />
             With our expertise in removal, tree trimming, stump grinding, and

@@ -16,8 +16,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
-      <div className="container mx-auto flex justify-between items-center p-4 md:px-12">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+      <div className="container mx-auto flex justify-between items-center p-4 md:px-12 max-w-[1200px]">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img loading="lazy" src={logo} className="h-10 w-10" alt="Logo" />{" "}
@@ -106,7 +106,7 @@ const Navbar = () => {
           </button>
         </Link>
       </div>
-    </header>
+    </nav>
   );
 };
 

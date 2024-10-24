@@ -1,47 +1,40 @@
-import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
-const Accordion = ({ faqs = [], sectionTitle }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const Accordion = ({ questions }) => {
+  const [selected, setSelected] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  const toggle = (i) => {
+    if (selected === i) {
+      return setSelected(null);
+    }
+
+    setSelected(i);
   };
 
   return (
-    <section className="bg-gray-100 py-10">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-6">
-          {sectionTitle}
-        </h2>
+    <section className="bg-gray-200 w-full py-10">
+      <div className="max-w-[1200px] mx-auto">
+        <h4 className="font-extrabold text-4xl mb-8">
+          Frequently Asked Questions
+        </h4>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
+        <div>
+          {questions.map((question, i) => (
             <div
-              key={index}
-              className={`bg-white rounded-lg shadow-md transition-all duration-300 ${
-                activeIndex === index ? "p-6" : "p-4"
-              }`}
+              className="max-w-[600px] mx-auto bg-white mb-2 px-6 py-4 rounded-xl cursor-pointer"
+              onClick={() => toggle(i)}
             >
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleAccordion(index)}
-              >
-                <h3 className="text-lg font-bold text-gray-800">
-                  {faq.question}
-                </h3>
-                <ChevronDown
-                  className={`w-6 h-6 text-lime-600 transition-transform duration-300 ${
-                    activeIndex === index ? "rotate-180" : ""
-                  }`}
-                />
+              <div className="flex item-center justify-between">
+                <h2 className="text-xl font-semibold">{question.question}</h2>
+                <span className="text-xl font-semi-bold">
+                  {selected === i ? "-" : "+"}
+                </span>
               </div>
-
-              {activeIndex === index && (
-                <div className="mt-4 text-gray-600 text-sm">
-                  <p>{faq.answer}</p>
-                </div>
-              )}
+              <div
+                className={selected === i ? `text-start` : `hidden text-start`}
+              >
+                {question.answer}
+              </div>
             </div>
           ))}
         </div>

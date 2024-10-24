@@ -74,7 +74,7 @@ const Footer = () => {
           <p className="text-center text-sm text-white">
             &copy; {new Date().getFullYear()} Fort Collins Tree Service. All
             rights reserved. Designed by
-            <a href="https://www.pywebsolutions.ca">Py Web Solutions</a>
+            <a href="https://www.pywebsolutions.ca"> Py Web Solutions</a>
           </p>
         </div>
       </div>

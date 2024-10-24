@@ -4,7 +4,7 @@ import Accordion from "../components/Accordion";
 import HeroSectionServices from "../components/HeroSectionServices";
 import { TreesIcon } from "lucide-react";
 import Features from "../components/Features";
-import { faqs, FeaturesData } from "../components/TreeTrimming";
+import { questions, FeaturesData } from "../components/TreeTrimming";
 import Section from "../components/Section";
 import treeimg from "../assets/Tree-Trimming-Fot-Collins-Co-791x1024.png";
 import img1 from "../assets/tree-trimming-2.jpg";
@@ -227,7 +227,7 @@ const TreeTrimming = () => {
           </>
         }
       />
-      <Accordion faqs={faqs} sectionTitle="Tree Trimming FAQ" />
+      <Accordion questions={questions} sectionTitle="Tree Trimming FAQ" />
     </>
   );
 };
